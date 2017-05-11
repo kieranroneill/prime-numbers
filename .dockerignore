@@ -1,0 +1,11 @@
+.gitignore
+.idea
+coverage/
+dist/
+nginx/
+node_modules/
+npm-debug.log
+test-results.xml
+.yarnclean
+yarn.lock
+yarn-error.log

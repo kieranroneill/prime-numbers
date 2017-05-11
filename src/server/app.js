@@ -2,13 +2,13 @@ process.env.NODE_ENV = (process.env.NODE_ENV || 'development');
 
 import express from 'express';
 import { Server } from 'http';
-import path from 'path';
+//import path from 'path';
 
 const app = express();
 const port = 1337;
-const rootPath = path.resolve(__dirname, '..', '..');
+//const rootPath = path.resolve(__dirname, '..', '..');
 const server = Server(app);
-const staticPath = path.resolve(rootPath, 'dist', 'public');
+//const staticPath = path.resolve(rootPath, 'dist', 'public');
 
 //====================================================
 // Routes.

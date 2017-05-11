@@ -1,0 +1,17 @@
+{
+  "restartable": "rs",
+  "ignore": [
+    "src/public/"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "babel-node"
+  },
+  "watch": [
+    "src/server/"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js"
+}
