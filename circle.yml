@@ -22,11 +22,11 @@ dependencies:
     - ~/.cache/yarn
   override:
     - yarn install
-    - yarn run build
 
 test:
   override:
     - yarn run lint
+    - yarn run build
     - yarn test
   post:
     # Save JUnit style test data for the test summary section.

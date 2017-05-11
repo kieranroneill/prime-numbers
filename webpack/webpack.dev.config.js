@@ -14,7 +14,14 @@ module.exports = {
     devServer: {
         contentBase: distPath,
         historyApiFallback: true,
-        port: port
+        port: port,
+        proxy: {
+            // Proxy all api calls to the running server.
+            '/api': {
+                target: localhost + ':8080',
+                secure: false
+            }
+        }
     },
     devtool: 'source-map',
 
