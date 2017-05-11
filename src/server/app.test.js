@@ -1,8 +1,8 @@
 import { requestByMethod } from '../../test/helpers';
 
-describe('server', () => {
-    const route = '/';
+const route = '/';
 
+describe('server', () => {
     describe('serving html', function() {
         it('should serve a HTML document at the base route', function(done) {
             requestByMethod('GET', route)

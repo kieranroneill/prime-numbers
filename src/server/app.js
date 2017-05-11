@@ -2,6 +2,7 @@ process.env.NODE_ENV = (process.env.NODE_ENV || 'development');
 
 import bodyParser from 'body-parser';
 import express from 'express';
+import expressValidator from 'express-validator';
 import { Server } from 'http';
 import path from 'path';
 
@@ -20,6 +21,7 @@ const staticPath = path.resolve(rootPath, 'dist', 'public');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(expressValidator());
 
 // Serve static assets.
 app.use(express.static(staticPath));
@@ -39,6 +41,10 @@ app.get('*', (request, response) => response.sendFile(path.resolve(staticPath, '
 //====================================================
 
 app.use((error, request, response, next) => {
+    if(error) {
+        return response.status(error.status || 500).json({ errors: error.errors });
+    }
+
     next();
 });
 
