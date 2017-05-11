@@ -41,8 +41,8 @@ ADD . /usr/app
 # Build app.
 RUN yarn run build
 
-# Open up the l33t port
-EXPOSE 1337
+# Open up the port
+EXPOSE 8080
 
 # Fly my pretties!!
 CMD ["pm2", "start", "processes.json", "--no-daemon"]
