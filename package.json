@@ -1,0 +1,49 @@
+{
+  "name": "prime-numbers",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Displays the prime numbers for a given input.",
+  "main": "src/server/app.js",
+  "author": {
+    "name": "Kieran O'Neill",
+    "email": "kieranroneill@googlemail.com"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "scripts": {
+    "eslint": "eslint",
+    "istanbul": "istanbul",
+    "lint": "eslint --ext .js --ext .jsx . && jsonlint ./config/*.json -q",
+    "mocha": "mocha",
+    "nodemon": "nodemon",
+    "start": "nodemon src/server/app --exec babel-node",
+    "test": "NODE_ENV=test istanbul cover _mocha -- './src/{public,server}/**/*.test.{js,jsx}'",
+    "webpack": "webpack"
+  },
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "webpack": "^2.5.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.0",
+    "istanbul": "^1.0.0-alpha.2",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "sinon": "^2.2.0",
+    "webpack-notifier": "^1.5.0"
+  }
+}
