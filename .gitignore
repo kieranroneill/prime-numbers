@@ -61,6 +61,7 @@ dist/
 **node_modules/
 
 ### Misc
+tmp/
 .yarnclean
 yarn.lock
 yarn-error.log

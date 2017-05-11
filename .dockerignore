@@ -1,9 +1,9 @@
 .gitignore
 .idea
-coverage/
-dist/
-nginx/
-node_modules/
+coverage
+dist
+nginx
+node_modules
 npm-debug.log
 test-results.xml
 .yarnclean
