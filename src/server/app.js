@@ -21,9 +21,8 @@ app.use(express.static(staticPath));
 // Routes.
 //====================================================
 
-// Use client-side routing.
-//app.get('*', (request, response) => response.sendFile(path.resolve(staticPath, 'index.html')));
-app.use('*', (request, response) => response.json({ hello: 'world' }));
+// Route back to client.
+app.get('*', (request, response) => response.sendFile(path.resolve(staticPath, 'index.html')));
 
 //====================================================
 // Errors...gotta catch 'em all.

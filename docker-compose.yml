@@ -8,6 +8,6 @@ nginx:
 app:
   build: .
   ports:
-    - "1337"
+    - "8080"
   environment:
     - NODE_ENV=production
