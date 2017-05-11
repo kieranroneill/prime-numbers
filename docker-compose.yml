@@ -1,0 +1,13 @@
+nginx:
+  build: ./nginx
+  links:
+    - app:app
+  ports:
+    - "80:80"
+
+app:
+  build: .
+  ports:
+    - "1337"
+  environment:
+    - NODE_ENV=production

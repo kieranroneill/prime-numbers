@@ -10,6 +10,8 @@
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {
+    "babel": "babel",
+    "build": "babel src/server -d dist/lib --ignore test.js",
     "eslint": "eslint",
     "istanbul": "istanbul",
     "lint": "eslint --ext .js --ext .jsx .",

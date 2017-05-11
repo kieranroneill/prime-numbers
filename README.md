@@ -7,7 +7,8 @@ Displays the prime numbers in a 10x10 grid for a given input.
 ## Usage
 
 * Ensure [Docker](https://www.docker.com/community-edition#/download) is installed and running.
-* Build and run the docker image: `docker-compose up -d`
+* Build and run the docker image: `docker-compose up`
+* Navigate to [http://localhost](http://localhost)
 
 ## Development
 
