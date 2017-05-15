@@ -11,7 +11,8 @@ class RequestError extends Error {
 }
 
 export const errors = {
-    PRIME_NUMBER_REQUIRED: 'Yo! lets see some digits.'
+    INVALID_NUMBER: 'Um, this is not a valid number.',
+    SIZE_REQUIRED: 'Yo! Let me see some digits.'
 };
 
 /**
