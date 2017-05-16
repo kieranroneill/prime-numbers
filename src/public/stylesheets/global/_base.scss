@@ -1,0 +1,16 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+// Outer elements.
+html {
+    font-size: 90%;
+}
+
+@media (min-width: 1300px) {
+    html {
+        font-size: 100%;
+    }
+}

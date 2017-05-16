@@ -4,6 +4,9 @@ import { mount, shallow } from 'enzyme';
 import { JSDOM } from 'jsdom';
 import { assert, mock, spy, stub } from 'sinon';
 
+// Ignore styling modules.
+import 'ignore-styles';
+
 // Server.
 import app from '../src/server/app';
 
