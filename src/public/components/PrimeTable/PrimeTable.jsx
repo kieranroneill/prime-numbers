@@ -1,3 +1,6 @@
+import axios from 'axios';
+import Promise from 'bluebird';
+import { CircularProgress, Snackbar } from 'material-ui';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
@@ -10,12 +13,39 @@ class PrimeTable extends Component {
         super(props);
 
         this.state = {
+            isLoading: true,
+            isErrorShowing: false,
+            primes: null,
             size: PrimeTable.toSize(props.size)
         };
     }
 
+    componentDidMount() {
+        this.getPrimeNumbers();
+    }
+
     componentWillReceiveProps(props) {
         this.setState({ size: PrimeTable.toSize(props.size) });
+    }
+
+    createPrimeTable() {
+        return (
+            <div>Table</div>
+        );
+    }
+
+    getPrimeNumbers() {
+        const url = '/api/primes?size=' + this.state.size;
+        const promise = new Promise(resolve => this.setState({ isLoading: true }, () => resolve()));
+
+        return promise
+            .then(() => axios.get(url))
+            .then(result => this.setState({ isLoading: false, isErrorShowing: false, primes: result }))
+            .catch(() => this.setState({ isLoading: false, isErrorShowing: true, primes: null }));
+    }
+
+    onTryAgainTouchTap() {
+        this.getPrimeNumbers();
     }
 
     /**
@@ -29,7 +59,17 @@ class PrimeTable extends Component {
 
     render() {
         return(
-            <div>Table goes here!</div>
+            <div styleName="container">
+                { this.state.isLoading ? <CircularProgress size={ 80 } /> : null }
+                { this.state.primes ? this.createPrimeTable() : null }
+                { this.state.isErrorShowing ? <div>Error</div> : null }
+                <Snackbar
+                    open={ this.state.isErrorShowing }
+                    message="Shall we try that again?"
+                    action="Try Again"
+                    onActionTouchTap={ this.onTryAgainTouchTap.bind(this) }
+                />
+            </div>
         );
     }
 }

@@ -9,6 +9,7 @@
     "app": true,
     "assert": true,
     "expect": true,
+    "match": true,
     "mock": true,
     "mount": true,
     "shallow": true,

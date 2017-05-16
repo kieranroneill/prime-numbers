@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
 
-const appTitle = 'Prime Numbers';
+const appTitle = 'Prime Table';
 const distPath = path.join(__dirname, '..', 'dist', 'public');
 const srcPath = path.join(__dirname, '..', 'src', 'public');
 

@@ -3,13 +3,3 @@
     justify-content: center;
     padding-top: 3rem;
 }
-
-.sizeInput {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.sizeInput > * {
-    margin-bottom: 2rem;
-}
