@@ -8,9 +8,9 @@ export default class PrimeNumberRoute {
     }
 
     /**
-     * Gets the next prime number. Value must be 0, 1 or a prime number.
+     * Gets the next prime number.
      * @param value the previous prime number, 0 or 1.
-     * @returns {Number} returns the next prime number or undefined if value is not 0, 1 or a prime number.
+     * @returns {Number} returns the next prime number or null if value is not 0, 1 or a prime number.
      */
     static nextPrime(value) {
         let i, limit;
@@ -18,6 +18,11 @@ export default class PrimeNumberRoute {
         // Generate the lower bound primes, because we know 'em!
         if(!value || value <= 2) {
             return ((value === 2) ? 3 : 2);
+        }
+
+        // If the number is an even number and not 2, use previous odd number!
+        if((value > 2 && value % 2 === 0)) {
+            value -= 1;
         }
 
         do {
@@ -42,7 +47,7 @@ export default class PrimeNumberRoute {
      */
     static getPrimes(size = 0) {
         const result = [];
-        let prime;
+        let prime = 0;
 
         for (let i = 0; i < size; i++) {
             prime = PrimeNumberRoute.nextPrime(prime);

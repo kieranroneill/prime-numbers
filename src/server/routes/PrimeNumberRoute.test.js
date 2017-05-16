@@ -84,7 +84,15 @@ describe('routes/PrimeNumberRoute', () => {
                 .to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]); // First 10 primes.
         });
 
-        it('should return an array of 100000 primes', () => {
+        it('should return an array of 20,000 primes', () => {
+            const size = 20000;
+            const result = PrimeNumberRoute.getPrimes(size);
+
+            expect(result).to.be.an('array')
+                .to.be.lengthOf(size);
+        });
+
+        it('should return an array of 100,000 primes', () => {
             const size = 100000;
             const result = PrimeNumberRoute.getPrimes(size);
 
@@ -92,25 +100,30 @@ describe('routes/PrimeNumberRoute', () => {
                 .to.be.lengthOf(size);
         });
 
-        // it('should return an array of 1000000 primes', () => {
-        //     const size = 1000000;
-        //     const result = PrimeNumberRoute.getPrimes(size);
-        //
-        //     expect(result).to.be.an('array')
-        //         .to.be.lengthOf(size);
-        // });
+        it('should return an array of 200,000 primes', () => {
+            const size = 200000;
+            const result = PrimeNumberRoute.getPrimes(size);
+
+            expect(result).to.be.an('array')
+                .to.be.lengthOf(size);
+        });
     });
 
     describe('nextPrime()', () => {
-        it('should default to 2 if the prime is undefined', () => expect(PrimeNumberRoute.nextPrime()).to.equal(2));
+        it('should default to 2 if the value is undefined', () => expect(PrimeNumberRoute.nextPrime()).to.equal(2));
 
-        it('should equal 2 if the prime is less 2', () => expect(PrimeNumberRoute.nextPrime(0)).to.equal(2));
+        it('should return the next prime if the value is an even number > 2', () => expect(PrimeNumberRoute.nextPrime(4))
+            .to.equal(5));
 
-        it('should equal 3 if the prime 2', () => expect(PrimeNumberRoute.nextPrime(2)).to.equal(3));
+        it('should equal 2 if the value is 0', () => expect(PrimeNumberRoute.nextPrime(0)).to.equal(2));
 
-        it('should equal 29 if the prime 23', () => expect(PrimeNumberRoute.nextPrime(23)).to.equal(29));
+        it('should equal 2 if the value is 1', () => expect(PrimeNumberRoute.nextPrime(1)).to.equal(2));
 
-        it('should equal 6700417 if the prime is 6700411', () => expect(PrimeNumberRoute.nextPrime(6700411))
+        it('should equal 3 if the value 2', () => expect(PrimeNumberRoute.nextPrime(2)).to.equal(3));
+
+        it('should equal 29 if the value 23', () => expect(PrimeNumberRoute.nextPrime(23)).to.equal(29));
+
+        it('should equal 6,700,417 if the value is 6,700,411', () => expect(PrimeNumberRoute.nextPrime(6700411))
             .to.equal(6700417));
     });
 });
