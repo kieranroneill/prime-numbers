@@ -10,6 +10,8 @@
     "assert": true,
     "expect": true,
     "mock": true,
+    "mount": true,
+    "shallow": true,
     "spy": true,
     "stub": true
   },
