@@ -1,8 +1,8 @@
 {
-  "name": "prime-numbers",
+  "name": "prime-table",
   "private": true,
   "version": "0.1.0",
-  "description": "Displays the prime numbers in a 10x10 grid for a given input.",
+  "description": "Displays a multiplication table prime numbers for a given size.",
   "main": "src/server/app.js",
   "author": {
     "name": "Kieran O'Neill",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kieranroneill/prime-numbers.git"
+    "url": "https://github.com/kieranroneill/prime-table.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "scripts": {

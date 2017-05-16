@@ -1,8 +1,8 @@
-[![CircleCI branch](https://img.shields.io/circleci/project/github/kieranroneill/prime-numbers/master.svg?style=flat-square)](https://circleci.com/gh/kieranroneill/prime-numbers/tree/master) [![Codecov branch](https://img.shields.io/codecov/c/github/kieranroneill/prime-numbers/master.svg?style=flat-square)](https://codecov.io/gh/kieranroneill/prime-numbers)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/kieranroneill/prime-table/master.svg?style=flat-square)](https://circleci.com/gh/kieranroneill/prime-table/tree/master) [![Codecov branch](https://img.shields.io/codecov/c/github/kieranroneill/prime-table/master.svg?style=flat-square)](https://codecov.io/gh/kieranroneill/prime-table)
 
-# Prime Numbers
+# Prime Table
 
-Displays the prime numbers in a 10x10 grid for a given input.
+Displays a multiplication table prime numbers for a given size.
 
 ## Usage
 

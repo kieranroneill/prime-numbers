@@ -1,5 +1,3 @@
-import _ from 'lodash';
-
 import { createRequestError, errors, getExpressValidationErrors } from '../utilities/error.util';
 
 export default class PrimeNumberRoute {
