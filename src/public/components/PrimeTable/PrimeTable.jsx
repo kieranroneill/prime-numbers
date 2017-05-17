@@ -34,6 +34,10 @@ class PrimeTable extends Component {
         );
     }
 
+    /**
+     * Creates the prime table from the prime number list.
+     * @returns {node} a HTML table containing the prime numbers as a multiplication table.
+     */
     createPrimeTable() {
         const length = this.state.primes.length + 1;
         let html = '<table>';
@@ -42,12 +46,12 @@ class PrimeTable extends Component {
             html += '<tr>';
 
             html += '<td>';
-            html += (i > 0) ? this.state.primes[i - 1] : '';
+            html += (i > 0) ? this.state.primes[i - 1] : ''; // Use an empty string from the 0, 0.
             html += '</td>';
 
             for(let j = 1; j < length; j++) {
                 html += '<td>';
-                html += (i > 0) ? (this.state.primes[i - 1] * this.state.primes[j - 1]) : this.state.primes[j - 1];
+                html += (i > 0) ? (this.state.primes[i - 1] * this.state.primes[j - 1]) : this.state.primes[j - 1]; // Use a multiplication if it is not the first column.
                 html += '</td>';
             }
 
@@ -63,6 +67,10 @@ class PrimeTable extends Component {
         );
     }
 
+    /**
+     * Gets a list of prime numbers from the server.
+     * @returns {Promise} a resolved promise.
+     */
     getPrimeNumbers() {
         const url = '/api/primes?size=' + this.state.size;
         const promise = new Promise(resolve => this.setState({ isLoading: true }, () => resolve()));

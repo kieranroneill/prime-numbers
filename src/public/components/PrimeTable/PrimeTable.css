@@ -6,6 +6,12 @@
     min-width: 15rem;
 }
 
+/* Tabl. */
 .table td {
     padding: 0.5rem;
+    transition: all 250ms ease-in-out;
+}
+
+.table td:hover {
+    background-color: #eee;
 }
