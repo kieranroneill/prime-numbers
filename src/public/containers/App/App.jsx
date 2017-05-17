@@ -39,6 +39,9 @@ class App extends Component {
                     <main styleName="main">
                         <PrimeTable />
                     </main>
+                    <footer styleName="footer">
+                        <p>Made with &hearts; by Kieran O'Neill</p>
+                    </footer>
                 </div>
             </MuiThemeProvider>
         );
