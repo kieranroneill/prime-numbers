@@ -9,6 +9,7 @@ const webpack = require('webpack');
 const appTitle = 'Prime Table';
 const distPath = path.join(__dirname, '..', 'dist', 'public');
 const srcPath = path.join(__dirname, '..', 'src', 'public');
+const uriLimit = 50000;
 
 module.exports = {
     appTitle: appTitle,
@@ -17,7 +18,47 @@ module.exports = {
         {
             test: /\.hbs$/,
             loader: 'handlebars-loader'
-        }
+        },
+        {
+            test: /\.svg$/,
+            loader: 'url-loader',
+            options: {
+                limit: uriLimit,
+                mimeType: 'image/svg+xml'
+            }
+        },
+        {
+            test: /\.woff$/,
+            loader: 'url-loader',
+            options: {
+                limit: uriLimit,
+                mimeType: 'application/font-woff'
+            }
+        },
+        {
+            test: /\.woff2$/,
+            loader: 'url-loader',
+            options: {
+                limit: uriLimit,
+                mimeType: 'application/font-woff2'
+            }
+        },
+        {
+            test: /\.[ot]tf$/,
+            loader: 'url-loader',
+            options: {
+                limit: uriLimit,
+                mimeType: 'application/octet-stream'
+            }
+        },
+        {
+            test: /\.eot$/,
+            loader: 'url-loader',
+            options: {
+                limit: uriLimit,
+                mimeType: 'application/vnd.ms-fontobject'
+            }
+        },
     ],
     commonPlugins: [
         new FaviconsWebpackPlugin({

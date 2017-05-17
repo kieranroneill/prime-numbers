@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 // Global styles.
+import './stylesheets/fonts/index.scss';
 import './stylesheets/global/index.scss';
 
 // Containers.

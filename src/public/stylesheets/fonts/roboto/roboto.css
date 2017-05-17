@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./Roboto-Regular-webfont.eot"), url("./Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-Regular-webfont.woff") format("woff"), url("./Roboto-Regular-webfont.ttf") format("truetype"), url("./Roboto-Regular-webfont.svg#RobotoRegular") format("svg");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 400;
+    src: url("./Roboto-RegularItalic-webfont.eot"), url("./Roboto-RegularItalic-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-RegularItalic-webfont.woff") format("woff"), url("./Roboto-RegularItalic-webfont.ttf") format("truetype"), url("./Roboto-RegularItalic-webfont.svg#RobotoRegularItalic") format("svg");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./Roboto-Bold-webfont.eot"), url("./Roboto-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-Bold-webfont.woff") format("woff"), url("./Roboto-Bold-webfont.ttf") format("truetype"), url("./Roboto-Bold-webfont.svg#RobotoBold") format("svg");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 700;
+    src: url("./Roboto-BoldItalic-webfont.eot"), url("./Roboto-BoldItalic-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-BoldItalic-webfont.woff") format("woff"), url("./Roboto-BoldItalic-webfont.ttf") format("truetype"), url("./Roboto-BoldItalic-webfont.svg#RobotoBoldItalic") format("svg");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100;
+    src: url("./Roboto-Light-webfont.eot"), url("./Roboto-Light-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-Light-webfont.woff") format("woff"), url("./Roboto-Light-webfont.ttf") format("truetype"), url("./Roboto-Light-webfont.svg#RobotoLight") format("svg");
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: italic;
+    font-weight: 100;
+    src: url("./Roboto-LightItalic-webfont.eot"), url("./Roboto-LightItalic-webfont.eot?#iefix") format("embedded-opentype"), url("./Roboto-LightItalic-webfont.woff") format("woff"), url("./Roboto-LightItalic-webfont.ttf") format("truetype"), url("./Roboto-LightItalic-webfont.svg#RobotoLightItalic") format("svg");
+}
