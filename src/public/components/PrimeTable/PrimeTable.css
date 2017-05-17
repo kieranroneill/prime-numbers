@@ -5,3 +5,7 @@
     min-height: 15rem;
     min-width: 15rem;
 }
+
+.table td {
+    padding: 0.5rem;
+}

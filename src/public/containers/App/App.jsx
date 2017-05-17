@@ -13,6 +13,7 @@ class App extends Component {
         return (
             <MuiThemeProvider>
                 <main styleName="main">
+                    <h1 styleName="title">Prime Table</h1>
                     <PrimeTable />
                 </main>
             </MuiThemeProvider>

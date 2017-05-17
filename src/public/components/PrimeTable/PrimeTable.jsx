@@ -28,9 +28,38 @@ class PrimeTable extends Component {
         this.setState({ size: PrimeTable.toSize(props.size) });
     }
 
-    createPrimeTable() {
+    createErrorText() {
         return (
-            <div>Table</div>
+            <div>Error</div>
+        );
+    }
+
+    createPrimeTable() {
+        const length = this.state.primes.length + 1;
+        let html = '<table>';
+
+        for(let i = 0; i < length; i++) {
+            html += '<tr>';
+
+            html += '<td>';
+            html += (i > 0) ? this.state.primes[i - 1] : '';
+            html += '</td>';
+
+            for(let j = 1; j < length; j++) {
+                html += '<td>';
+                html += (i > 0) ? (this.state.primes[i - 1] * this.state.primes[j - 1]) : this.state.primes[j - 1];
+                html += '</td>';
+            }
+
+            html += '</tr>';
+        }
+
+        html += '</table>';
+
+        return (
+            <div
+                dangerouslySetInnerHTML={{ __html: html }}
+                styleName="table" />
         );
     }
 
@@ -40,7 +69,7 @@ class PrimeTable extends Component {
 
         return promise
             .then(() => axios.get(url))
-            .then(result => this.setState({ isLoading: false, isErrorShowing: false, primes: result }))
+            .then(result => this.setState({ isLoading: false, isErrorShowing: false, primes: result.data }))
             .catch(() => this.setState({ isLoading: false, isErrorShowing: true, primes: null }));
     }
 
@@ -62,7 +91,7 @@ class PrimeTable extends Component {
             <div styleName="container">
                 { this.state.isLoading ? <CircularProgress size={ 80 } /> : null }
                 { this.state.primes ? this.createPrimeTable() : null }
-                { this.state.isErrorShowing ? <div>Error</div> : null }
+                { this.state.isErrorShowing ? this.createErrorText() : null }
                 <Snackbar
                     open={ this.state.isErrorShowing }
                     message="Shall we try that again?"
