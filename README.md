@@ -19,3 +19,14 @@ Displays a multiplication table prime numbers for a given size.
 * Navigate to [http://localhost:1337](http://localhost:1337)
 
 ## Testing
+
+Testing is composed of:
+* [Mocha](https://mochajs.org/) as the test runner.
+* [Chai](http://chaijs.com/) for assertions.
+* [SinonJS](http://sinonjs.org/) for spys, stubs and mocks.
+* [Enzyme](https://github.com/airbnb/enzyme) for testing React components.
+* [Istanbul](https://github.com/gotwarlost/istanbul) for code coverage reporting.
+
+Testing is triggered by a single npm script: `yarn test`.
+
+Once the tests have completed, coverage reports can be found in the `coverage/` directory and mocha will also convert the test results into a JUnit style `test-results.xml` at the root level.

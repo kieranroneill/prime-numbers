@@ -40,7 +40,7 @@ class App extends Component {
                         <PrimeTable />
                     </main>
                     <footer styleName="footer">
-                        <p>Made with &hearts; by Kieran O'Neill</p>
+                        <p>{ 'Made with ❤ by Kieran O\'Neill' }</p>
                     </footer>
                 </div>
             </MuiThemeProvider>

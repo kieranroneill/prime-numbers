@@ -1,5 +1,5 @@
-# Ubuntu LTS (16.04)
-FROM ubuntu:16.04
+# Ubuntu LTS (16.10)
+FROM ubuntu:16.10
 
 MAINTAINER Kieran O\'Neill
 
@@ -9,6 +9,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 # Update and install dependencies
 RUN apt-get update --fix-missing
 RUN apt-get install -y curl
+RUN apt-get install -qq -y bzip2
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 6.9.5

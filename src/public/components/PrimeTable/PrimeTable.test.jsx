@@ -84,7 +84,7 @@ describe('<PrimeTable />', () => {
         it('should load with the default 10', function(done) {
             const instance = shallow(<PrimeTableTest { ...this.props } />).instance();
 
-            this.axiosGetStub.resolves(primes);
+            this.axiosGetStub.resolves({ data: primes });
 
             instance.getPrimeNumbers()
                 .then(() => {
