@@ -4,6 +4,14 @@
 
 Displays a multiplication table prime numbers for a given size.
 
+**What are you pleased with?**
+
+The solution provides a good example of a React app with a Node backend that has been developed in a TDD fashion and is automated with a CI system. I am also very happy that I got to throw docker into the mix :D
+
+**What you would do with it if you had more time?**
+
+I would provide a feature that allows the user to specify the size of the table and I would revisit the prime number algorithm in a bid to further optimise it's computational efficiency.
+
 ## Usage
 
 * Ensure [Docker](https://www.docker.com/community-edition#/download) is installed and running.
