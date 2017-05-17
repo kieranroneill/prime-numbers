@@ -1,4 +1,5 @@
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 
@@ -12,10 +13,14 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider>
-                <main styleName="main">
-                    <h1 styleName="title">Prime Table</h1>
-                    <PrimeTable />
-                </main>
+                <div className="page">
+                    <AppBar
+                        showMenuIconButton={ false }
+                        title="Prime Table"/>
+                    <main styleName="main">
+                        <PrimeTable />
+                    </main>
+                </div>
             </MuiThemeProvider>
         );
     }
