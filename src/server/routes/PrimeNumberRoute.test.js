@@ -10,6 +10,8 @@ import { errors } from '../utilities/error.util';
 const endpoint = '/api/primes';
 
 describe('routes/PrimeNumberRoute', () => {
+    const firstTenPrimes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29];
+
     describe('GET /primes', () => {
         it('should return a 400 if no size is supplied', done => {
             requestByMethod('GET', endpoint)
@@ -81,7 +83,15 @@ describe('routes/PrimeNumberRoute', () => {
 
             expect(result).to.be.an('array')
                 .to.be.lengthOf(size)
-                .to.deep.equal([2, 3, 5, 7, 11, 13, 17, 19, 23, 29]); // First 10 primes.
+                .to.deep.equal(firstTenPrimes); // First 10 primes.
+        });
+
+        it('should return an array of 1000 primes', () => {
+            const size = 1000;
+            const result = PrimeNumberRoute.getPrimes(size);
+
+            expect(result).to.be.an('array')
+                .to.be.lengthOf(size);
         });
 
         it('should return an array of 20,000 primes', () => {
@@ -109,21 +119,42 @@ describe('routes/PrimeNumberRoute', () => {
         });
     });
 
-    describe('nextPrime()', () => {
-        it('should default to 2 if the value is undefined', () => expect(PrimeNumberRoute.nextPrime()).to.equal(2));
+    describe('segmentedSieve()', () => {
+        it('should return no primes if the maximum is below the first prime', () => {
+            const result = PrimeNumberRoute.segmentedSieve(0, 1);
 
-        it('should return the next prime if the value is an even number > 2', () => expect(PrimeNumberRoute.nextPrime(4))
-            .to.equal(5));
+            expect(result).to.be.an('array')
+                .to.be.empty;
+        });
 
-        it('should equal 2 if the value is 0', () => expect(PrimeNumberRoute.nextPrime(0)).to.equal(2));
+        it('should return no primes if the minimum exceeds the maximum', () => {
+            const result = PrimeNumberRoute.segmentedSieve(5, 1);
 
-        it('should equal 2 if the value is 1', () => expect(PrimeNumberRoute.nextPrime(1)).to.equal(2));
+            expect(result).to.be.an('array')
+                .to.be.empty;
+        });
 
-        it('should equal 3 if the value 2', () => expect(PrimeNumberRoute.nextPrime(2)).to.equal(3));
+        it('should return the first prime', () => {
+            const result = PrimeNumberRoute.segmentedSieve(0, 2);
 
-        it('should equal 29 if the value 23', () => expect(PrimeNumberRoute.nextPrime(23)).to.equal(29));
+            expect(result).to.be.an('array')
+                .to.be.lengthOf(1)
+                .to.include(2);
+        });
 
-        it('should equal 6,700,417 if the value is 6,700,411', () => expect(PrimeNumberRoute.nextPrime(6700411))
-            .to.equal(6700417));
+        it('should return the first prime for the same ranges', () => {
+            const result = PrimeNumberRoute.segmentedSieve(2, 2);
+
+            expect(result).to.be.an('array')
+                .to.be.lengthOf(1)
+                .to.include(2);
+        });
+
+        it('should return the first 10 primes in 30', () => {
+            const result = PrimeNumberRoute.segmentedSieve(0, 30);
+
+            expect(result).to.be.an('array')
+                .to.deep.equal(firstTenPrimes);
+        });
     });
 });
