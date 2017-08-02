@@ -1,14 +1,15 @@
 {
   "restartable": "rs",
-  "ignore": [
-    "src/public/"
-  ],
   "verbose": true,
   "execMap": {
     "js": "babel-node"
   },
+  "ignore": [
+    "*.test*",
+    "src/client/"
+  ],
   "watch": [
-    "src/server/"
+    "src/server"
   ],
   "env": {
     "NODE_ENV": "development"
